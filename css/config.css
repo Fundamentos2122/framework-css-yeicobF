@@ -1,7 +1,18 @@
 * {
+  /* 
+  Modelo border-box, para que el tamaño de elementos no sea modificado por propiedades como margin, padding, border, entre otras. 
+  */
   box-sizing: border-box;
+
+  /* Cambiar el tipo de fuente predeterminada. */
+  /* 
+   * En este caso, el tipo de fuentes es sans-serif, por lo que no es muy
+   * decorada. Es más plana.
+   * */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
 }

@@ -1,1 +1,8 @@
+/* 
+Tomar los otros archivos para solamente agregar este archivo en el HTML, en lugar de agregar todos.
+
+- Conviene hacer archivos más pequeños, de forma modular, para no tener que
+importar uno por uno, sino que se puedan todos desde un solo archivo.
+*/
 @import url("config.css");
+@import url("text.css");

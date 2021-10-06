@@ -1,3 +1,34 @@
-h1, h2, h3, h4, h5, h6 {
+/* 
+- Tamaños de fuentes:
+  - 2em: 21.44px
+  - 1.5em: 19,92px
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+/*
+Copiamos las etiquetas de headings y sus estilos para las clases.
+  - Para cuando queremos darle un mismo estilo a un texto y que el navegador no
+  lo detecte semánticamente como tal.
+*/
+.h1 {
+  /* Declaración de variables. */
+  --font-size: 2em;
+
+  display: block;
+  font-size: var(--font-size, 2em);
+  font-weight: bold;
+  /* Función calc para hacer cálculos. */
+  margin-bottom: calc(var(--font-size, 2em) * 0.09);
+}
+
+p {
   margin-top: 0;
 }
