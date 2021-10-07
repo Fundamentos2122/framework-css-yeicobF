@@ -1,0 +1,52 @@
+/* Colores de fondo utilizando colores definidos como variables. */
+
+.bg-primary {
+  color: var(--color-primary);
+}
+.bg-secondary {
+  color: var(--color-secondary);
+}
+.bg-success {
+  color: var(--color-success);
+}
+.bg-info {
+  color: var(--color-info);
+}
+.bg-warning {
+  color: var(--color-warning);
+}
+.bg-danger {
+  color: var(--color-danger);
+}
+.bg-light {
+  color: var(--color-light);
+}
+.bg-dark {
+  color: var(--color-dark);
+}
+
+/* --------------------------------- BORDES --------------------------------- */
+
+.border {
+  /**
+   * Al manejar border en nuestra página, suelen utilizarse para marcar
+   * diferencias entre elementos, pero queremos que sean border con solores
+   * suaves.
+   * 
+   * - Que se vea borde, pero que no sea muy perceptible.
+   * */
+  border: var(--border-color);;
+}
+
+.border-top {
+  border-top: var(--border-color);;
+}
+.border-bottom {
+  border-bottom: var(--border-color);;
+}
+.border-right {
+  border-right: var(--border-color);;
+}
+.border-left {
+  border-left: var(--border-color);;
+}

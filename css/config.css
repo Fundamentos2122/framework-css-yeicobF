@@ -5,9 +5,10 @@
   box-sizing: border-box;
 
   /* Cambiar el tipo de fuente predeterminada. */
-  /* 
+  /*
    * En este caso, el tipo de fuentes es sans-serif, por lo que no es muy
    * decorada. Es más plana.
+   * 
    * */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -15,4 +16,33 @@
 html,
 body {
   margin: 0;
+}
+
+/** 
+ * En `:root` definimos las variables que queramos utilizar de forma global, ya 
+ * que así, son accesibles desde cualquier lugar.
+ * */
+:root {
+  /** 
+   * Definimos el color primario. 
+   * No definir colores que no se vean bien, como amarillos chillones o del
+   * estilo.
+   * 
+   * - Algunos colores los utilizamos porque ya los tenemos como relacionados
+   * con un cierto tipo de datos, alertas o situaciones.
+   * - PARA NUESTRAS PÁGINAS LA IDEA ES QUE DEFINAMOS TODOS LOS COLORES Y
+   * SOLAMENTE LES HAGAMOS REFERENCIA.
+   * */
+  --color-primary: #0d6efd;
+  --color-secondary: #adb5bd;
+  /* Verde porque ya así identificamos lo que sale bien. */
+  --color-success: #198754;
+  --color-info: #17a2b8;
+  --color-warning: #ffc107;
+  --color-danger: #dc3445;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
+
+  /* Colores de bordes. */
+  --border-color: #;
 }

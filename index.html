@@ -9,6 +9,16 @@
   <title>
     2P | Creación de nuestro propio Framework | Martes, 5 de OCTUBRE del 2021
   </title>
+
+  <style>
+    .border-style {
+      width: 150px;
+      height: 150px;
+      margin: 0.5em;
+      display: inline-block;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -19,6 +29,35 @@
     enim quis quod, dolores eligendi soluta dolorum vero alias sapiente
     quibusdam ab officiis iste quas libero laborum odio eaque dignissimos.
   </p>
+  <!-- div.display-${DISPLAY $}*4 -->
+  <div class="display-1">DISPLAY 1</div>
+  <div class="display-2">DISPLAY 2</div>
+  <div class="display-3">DISPLAY 3</div>
+  <div class="display-4">DISPLAY 4</div>
+
+  <!-- (p.text-primary>lorem)+(p.text-success>lorem) -->
+  <p class="text-primary">Lorem ipsum dolor, sit amet consectetur adipisicing
+    elit. Fugit distinctio rem excepturi illo omnis illum quaerat sequi mollitia
+    quas, molestias itaque natus, veritatis quibusdam id quidem pariatur.
+    Corrupti, odit nam.</p>
+  <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit. Dicta voluptas, repellat rem nemo iusto cupiditate, quae, nobis
+    tempora nostrum maxime ex qui minus asperiores! Eaque debitis magnam
+    accusantium laboriosam odio.</p>
+
+  <!-- div.bg-{bg-}*8 -->
+  <!-- Reutilizamos las clases que ya hemos definido. -->
+  <div class="bg-primary text-light">bg-primary</div>
+  <div class="bg-secondary text-light">bg-secondary</div>
+  <div class="bg-success text-light">bg-success</div>
+  <div class="bg-info">bg-info</div>
+  <div class="bg-warning">bg-warning</div>
+  <div class="bg-danger">bg-danger</div>
+  <div class="bg-light">bg-light</div>
+  <div class="bg-dark text-light">bg-dark</div>
+
+  <br><br><br>
+  <div class="border border-style">Borde</div>
 </body>
 
 </html>

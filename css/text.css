@@ -13,10 +13,11 @@ h6 {
   margin-top: 0;
 }
 
-/*
-Copiamos las etiquetas de headings y sus estilos para las clases.
-  - Para cuando queremos darle un mismo estilo a un texto y que el navegador no
-  lo detecte semánticamente como tal.
+/** 
+ * Copiamos las etiquetas de headings y sus estilos para las clases.
+ * - Para cuando queremos darle un mismo estilo a un texto y que el navegador no
+ * 
+ * lo detecte semánticamente como tal.
 */
 .h1 {
   /* Declaración de variables. */
@@ -29,6 +30,59 @@ Copiamos las etiquetas de headings y sus estilos para las clases.
   margin-bottom: calc(var(--font-size, 2em) * 0.09);
 }
 
+h6, .h6 {
+  font-size: 1em;
+}
+
+.display-1 {
+font-size: ;
+font-weight;
+  line-height: ;
+}
+
+.display-2 {
+  font-size: ;
+font-weight;
+  line-height: ;
+}
+.display-3 {
+  font-size: ;
+font-weight;
+  line-height: ;
+}
+.display-4 {
+font-size: ;
+font-weight;
+  line-height: ;
+}
+
+
+
 p {
   margin-top: 0;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-success {
+  color: var(--color-success);
+}
+.text-info {
+  color: var(--color-info);
+}
+.text-warning {
+  color: var(--color-warning);
+}
+.text-danger {
+  color: var(--color-danger);
+}
+.text-light {
+  color: var(--color-light);
+}
+.text-dark {
+  color: var(--color-dark);
 }

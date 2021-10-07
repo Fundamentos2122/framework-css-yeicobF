@@ -6,3 +6,4 @@ importar uno por uno, sino que se puedan todos desde un solo archivo.
 */
 @import url("config.css");
 @import url("text.css");
+@import url("utilities.css");
