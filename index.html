@@ -11,6 +11,7 @@
   </title>
 
   <style>
+    /* Formato a los bordes para que se vean sus diferencias. Esto en lugar de ponerlos en el atributo 'style=""' */
     .border-show-box-style {
       width: 150px;
       height: 150px;
@@ -64,12 +65,12 @@
   <div class="border-left border-show-box-style">Borde</div>
 
   <!-- Bordes, pero quitando un borde. -->
-  <div class="border-0 bg-secondary"></div>
+  <div class="border-show-box-style border-0 bg-secondary">Quitando borde</div>
   <!-- div.border.border-0*4 -->
-  <div class="border border-top-0"></div>
-  <div class="border border-right-0"></div>
-  <div class="border border-bottom-0"></div>
-  <div class="border border-left-0"></div>
+  <div class="border-show-box-style border border-top-0"></div>
+  <div class="border-show-box-style border border-right-0"></div>
+  <div class="border-show-box-style border border-bottom-0"></div>
+  <div class="border-show-box-style border border-left-0"></div>
 </body>
 
 </html>

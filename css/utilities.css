@@ -35,20 +35,20 @@
    * 
    * - Que se vea borde, pero que no sea muy perceptible.
    * */
-  border: var(--border-color);
+  border: solid 1px var(--border-color);
 }
 
 .border-top {
-  border-top: var(--border-color);
+  border-top: solid 1px var(--border-color);
 }
 .border-bottom {
-  border-bottom: var(--border-color);
+  border-bottom: solid 1px var(--border-color);
 }
 .border-right {
-  border-right: var(--border-color);
+  border-right: solid 1px var(--border-color);
 }
 .border-left {
-  border-left: var(--border-color);
+  border-left: solid 1px var(--border-color);
 }
 
 /* Bordes, pero con tamaño 0, para quitarlos cuando pongamos la clase. */
