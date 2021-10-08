@@ -1,28 +1,28 @@
 /* Colores de fondo utilizando colores definidos como variables. */
 
 .bg-primary {
-  color: var(--color-primary);
+  background-color: var(--color-primary);
 }
 .bg-secondary {
-  color: var(--color-secondary);
+  background-color: var(--color-secondary);
 }
 .bg-success {
-  color: var(--color-success);
+  background-color: var(--color-success);
 }
 .bg-info {
-  color: var(--color-info);
+  background-color: var(--color-info);
 }
 .bg-warning {
-  color: var(--color-warning);
+  background-color: var(--color-warning);
 }
 .bg-danger {
-  color: var(--color-danger);
+  background-color: var(--color-danger);
 }
 .bg-light {
-  color: var(--color-light);
+  background-color: var(--color-light);
 }
 .bg-dark {
-  color: var(--color-dark);
+  background-color: var(--color-dark);
 }
 
 /* --------------------------------- BORDES --------------------------------- */
@@ -35,18 +35,35 @@
    * 
    * - Que se vea borde, pero que no sea muy perceptible.
    * */
-  border: var(--border-color);;
+  border: var(--border-color);
 }
 
 .border-top {
-  border-top: var(--border-color);;
+  border-top: var(--border-color);
 }
 .border-bottom {
-  border-bottom: var(--border-color);;
+  border-bottom: var(--border-color);
 }
 .border-right {
-  border-right: var(--border-color);;
+  border-right: var(--border-color);
 }
 .border-left {
-  border-left: var(--border-color);;
+  border-left: var(--border-color);
+}
+
+/* Bordes, pero con tamaño 0, para quitarlos cuando pongamos la clase. */
+.border-0 {
+  border: 0;
+}
+.border-top-0 {
+  border-top: 0;
+}
+.border-right-0 {
+  border-right: 0;
+}
+.border-bottom-0 {
+  border-bottom: 0;
+}
+.border-left-0 {
+  border-left: 0;
 }

@@ -11,7 +11,7 @@
   </title>
 
   <style>
-    .border-style {
+    .border-show-box-style {
       width: 150px;
       height: 150px;
       margin: 0.5em;
@@ -57,7 +57,19 @@
   <div class="bg-dark text-light">bg-dark</div>
 
   <br><br><br>
-  <div class="border border-style">Borde</div>
+  <div class="border border-show-box-style">Borde</div>
+  <div class="border-top border-show-box-style">Borde</div>
+  <div class="border-right border-show-box-style">Borde</div>
+  <div class="border-bottom border-show-box-style">Borde</div>
+  <div class="border-left border-show-box-style">Borde</div>
+
+  <!-- Bordes, pero quitando un borde. -->
+  <div class="border-0 bg-secondary"></div>
+  <!-- div.border.border-0*4 -->
+  <div class="border border-top-0"></div>
+  <div class="border border-right-0"></div>
+  <div class="border border-bottom-0"></div>
+  <div class="border border-left-0"></div>
 </body>
 
 </html>
