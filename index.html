@@ -23,8 +23,9 @@
 </head>
 
 <body>
+  <!-- Títulos h1, tanto en etiqueta como en clase. -->
   <h1>Hola, mundo</h1>
-  <div class="h1">Hola, mundo</div>
+  <div class="h1">Hola, <br>mundo</div>
   <p>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore deserunt
     enim quis quod, dolores eligendi soluta dolorum vero alias sapiente
@@ -37,14 +38,18 @@
   <div class="display-4">DISPLAY 4</div>
 
   <!-- (p.text-primary>lorem)+(p.text-success>lorem) -->
-  <p class="text-primary">Lorem ipsum dolor, sit amet consectetur adipisicing
+  <p class="text-primary">
+    Lorem ipsum dolor, sit amet consectetur adipisicing
     elit. Fugit distinctio rem excepturi illo omnis illum quaerat sequi mollitia
     quas, molestias itaque natus, veritatis quibusdam id quidem pariatur.
-    Corrupti, odit nam.</p>
-  <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipisicing
+    Corrupti, odit nam.
+  </p>
+  <p class="text-success">
+    Lorem ipsum dolor sit amet, consectetur adipisicing
     elit. Dicta voluptas, repellat rem nemo iusto cupiditate, quae, nobis
     tempora nostrum maxime ex qui minus asperiores! Eaque debitis magnam
-    accusantium laboriosam odio.</p>
+    accusantium laboriosam odio.
+  </p>
 
   <!-- div.bg-{bg-}*8 -->
   <!-- Reutilizamos las clases que ya hemos definido. -->
@@ -58,19 +63,21 @@
   <div class="bg-dark text-light">bg-dark</div>
 
   <br><br><br>
-  <div class="border border-show-box-style">Borde</div>
-  <div class="border-top border-show-box-style">Borde</div>
-  <div class="border-right border-show-box-style">Borde</div>
-  <div class="border-bottom border-show-box-style">Borde</div>
-  <div class="border-left border-show-box-style">Borde</div>
 
-  <!-- Bordes, pero quitando un borde. -->
-  <div class="border-show-box-style border-0 bg-secondary">Quitando borde</div>
+  <!-- Mostrar bordes en lados. -->
+  <div class="border border-primary border-show-box-style"></div>
+  <div class="border-top border-show-box-style"></div>
+  <div class="border-right border-success border-show-box-style"></div>
+  <div class="border-bottom border-show-box-style"></div>
+  <div class="border-left border-warning border-show-box-style"></div>
+
+  <!-- Bordes, pero quitando un borde, especificando un lado. -->
+  <div class="border-0 bg-secondary border-show-box-style"></div>
   <!-- div.border.border-0*4 -->
-  <div class="border-show-box-style border border-top-0"></div>
-  <div class="border-show-box-style border border-right-0"></div>
-  <div class="border-show-box-style border border-bottom-0"></div>
-  <div class="border-show-box-style border border-left-0"></div>
+  <div class="border border-top-0 border-danger border-show-box-style"></div>
+  <div class="border border-right-0 border-info border-show-box-style"></div>
+  <div class="border border-bottom-0 border-show-box-style"></div>
+  <div class="border border-left-0 border-show-box-style"></div>
 </body>
 
 </html>
