@@ -1,3 +1,67 @@
+/* --------------------------------- BOTONES -------------------------------- */
+
+/* Los botones son unos de los elementos más importantes. */
+.btn {
+  /* Evitar que los botones se desplieguen en línea. */
+  display: inline-block;
+  /* Por default, que la alineación sea centrada. */
+  text-align: center;
+  padding: 0.25em 0.75em;
+  font-size: 1em;
+  /* Mejor manejar bordes muy sútiles. */
+  border: 1px solid var(--border-color);
+  /* Bordes más redondeados. */
+  border-radius: 0.25em;
+  /* Que no subraye los textos, sobre todo cuando se trata de un link. */
+  text-decoration: none;
+}
+
+/* Colores a los bordes dependiendo del tipo. */
+/** 
+ * Creo que aquí en lugar de redundar, podríamos utilizar las clases de
+ * bg-importancia.
+ * 
+ * Hay que tomar en cuenta que, dependiendo del color, hay que tener un color 
+ * de fuente que haga contraste, en lugar de una fuente que no se alcance a ver 
+ * bien.
+ * - Lo que cambia aquí es que no solo aplica el color de fondo, sino que 
+ * aplica el color de la fuente, ya que tiene que tener contraste.
+ * */
+.btn-primary {
+  color: #fff;
+  background-color: var(--color-primary);
+}
+.btn-secondary {
+  color: #fff;
+  background-color: var(--color-secondary);
+}
+
+.btn-success {
+  color: #fff;
+  background-color: var(--color-success);
+}
+.btn-info {
+  color: #fff;
+  background-color: var(--color-info);
+}
+.btn-warning {
+  /* Un color que hace más contraste. Es decisión de cada uno poner el color. */
+  color: #222;
+  background-color: var(--color-warning);
+}
+.btn-danger {
+  color: #fff;
+  background-color: var(--color-danger);
+}
+.btn-light {
+  color: #222;
+  background-color: var(--color-light);
+}
+.btn-dark {
+  color: #fff;
+  background-color: var(--color-dark);
+}
+
 /* --------------------------------- TABLAS --------------------------------- */
 
 .table {
