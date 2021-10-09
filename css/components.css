@@ -1,0 +1,15 @@
+/* --------------------------------- TABLAS --------------------------------- */
+
+.table {
+  /* Para que no haya separaciones entre líneas y haya una sola línea. */
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.table th,
+.table td {
+  /* Entre cada borde hay un espacio en blanco, por lo que en table tenemos que definir un `border-collapse: collapse;` */
+  padding: 0.5em;
+  border-top: 1px solid var(--border-color);
+}

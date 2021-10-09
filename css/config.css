@@ -45,4 +45,33 @@ body {
 
   /* Colores de bordes. */
   --border-color: #dee2e6;
+
+  /** 
+   * Podemos hacer versiones más claras y más oscuras de cada uno de los
+   * colores.
+   * */
+  --color-primary-darked: #;
+  --color-primary-clear: #;
+  
+  --color-secondary-darked: #;
+  --color-secondary-clear: #;
+  
+  --color-success-darked: #;
+  --color-success-clear: #;
+  
+  --color-info-darked: #;
+  --color-info-clear: #;
+  
+  --color-warning-darked: #;
+  --color-warning-clear: #;
+  
+  --color-danger-darked: #;
+  --color-danger-clear: #;
+  
+  --color-light-darked: #;
+  --color-light-clear: #;
+  
+  --color-dark-darked: #;
+  --color-dark-clear: #;
+  
 }
