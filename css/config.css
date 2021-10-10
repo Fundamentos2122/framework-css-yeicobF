@@ -23,6 +23,9 @@ body {
  * que así, son accesibles desde cualquier lugar.
  * */
 :root {
+  /* Colores de bordes. */
+  --border-color: #dee2e6;
+  
   /** 
    * Definimos el color primario. 
    * No definir colores que no se vean bien, como amarillos chillones o del
@@ -43,35 +46,31 @@ body {
   --color-light: #f8f9fa;
   --color-dark: #343a40;
 
-  /* Colores de bordes. */
-  --border-color: #dee2e6;
-
   /** 
    * Podemos hacer versiones más claras y más oscuras de cada uno de los
-   * colores.
+   * colores. Esto ayuda para los botones, por ejemplo.
    * */
-  --color-primary-darked: #;
+  --color-primary-darked: #0c4fb3;
   --color-primary-clear: #;
-  
-  --color-secondary-darked: #;
+
+  --color-secondary-darked: #8f959b;
   --color-secondary-clear: #;
-  
-  --color-success-darked: #;
+
+  --color-success-darked: #115837;
   --color-success-clear: #;
-  
-  --color-info-darked: #;
+
+  --color-info-darked: #127d8d;
   --color-info-clear: #;
-  
-  --color-warning-darked: #;
+
+  --color-warning-darked: #c7980b;
   --color-warning-clear: #;
-  
-  --color-danger-darked: #;
+
+  --color-danger-darked: #af2835;
   --color-danger-clear: #;
-  
-  --color-light-darked: #;
+
+  --color-light-darked: #c9caca;
   --color-light-clear: #;
-  
-  --color-dark-darked: #;
+
+  --color-dark-darked: #191c1f;
   --color-dark-clear: #;
-  
 }

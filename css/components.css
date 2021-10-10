@@ -8,12 +8,34 @@
   text-align: center;
   padding: 0.25em 0.75em;
   font-size: 1em;
-  /* Mejor manejar bordes muy sútiles. */
+  /* Mejor manejar bordes muy sutiles. */
   border: 1px solid var(--border-color);
   /* Bordes más redondeados. */
   border-radius: 0.25em;
   /* Que no subraye los textos, sobre todo cuando se trata de un link. */
   text-decoration: none;
+
+  /** 
+   * Agregamos una transición al cambio de color de los botones.
+   * Nos permiten hacer el cambio de valor de una propiedad y que el cambio no sea de golpe, sino que se haga paulatinamente y no se vea de golpe. 
+   * 
+   * transition: atributoAlQueSeAplicaTransicion tiempoDuracionTransicion movimientoTipoTransicion;
+   * 
+   * - Cabe aclarar que se puede especificar más de una transición en la misma 
+   * línea. En este caso ponemos 2 transiciones:
+   *    
+   *    1. Cambio del color de fuente (color).
+   *    2. Cambio del color del fondo (background-color).
+   * 
+   * Cada que cambie el atributo indicado, se hará una transición del valor
+   * actual al valor nuevo.
+   * */
+  transition: color 0.2s ease, background-color 0.2 ease;
+}
+
+/* hover a los botones. */
+.btn:hover {
+  cursor: pointer;
 }
 
 /* Colores a los bordes dependiendo del tipo. */
@@ -26,40 +48,76 @@
  * bien.
  * - Lo que cambia aquí es que no solo aplica el color de fondo, sino que 
  * aplica el color de la fuente, ya que tiene que tener contraste.
+ * 
+ * - Hacemos un cambio de tonalidad en los botones al hacer un hover. Este
+ * dependerá del color, ya que se elegirá uno más oscuro o uno más claro
+ * dependiendo de la situación.
  * */
 .btn-primary {
   color: #fff;
   background-color: var(--color-primary);
 }
+.btn-primary:hover {
+  background-color: var(--color-primary-darked);
+}
+
 .btn-secondary {
   color: #fff;
   background-color: var(--color-secondary);
+}
+.btn-secondary:hover {
+  background-color: var(--color-secondary-darked);
 }
 
 .btn-success {
   color: #fff;
   background-color: var(--color-success);
 }
+.btn-success:hover {
+  background-color: var(--color-success-darked);
+}
+
 .btn-info {
   color: #fff;
   background-color: var(--color-info);
 }
+.btn-info:hover {
+  background-color: var(--color-info-darked);
+}
+
 .btn-warning {
   /* Un color que hace más contraste. Es decisión de cada uno poner el color. */
   color: #222;
   background-color: var(--color-warning);
 }
+.btn-warning:hover {
+  /* Color de fuente blanco porque el nuevo color es muy oscuro. */
+  color: #fff;
+  background-color: var(--color-warning-darked);
+}
+
 .btn-danger {
   color: #fff;
   background-color: var(--color-danger);
 }
+.btn-danger:hover {
+  background-color: var(--color-danger-darked);
+}
+
 .btn-light {
   color: #222;
   background-color: var(--color-light);
 }
+.btn-light:hover {
+  background-color: var(--color-light-darked);
+}
+
 .btn-dark {
   color: #fff;
   background-color: var(--color-dark);
+}
+.btn-dark:hover {
+  background-color: var(--color-dark-darked);
 }
 
 /* --------------------------------- TABLAS --------------------------------- */
