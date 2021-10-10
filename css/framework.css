@@ -4,7 +4,43 @@ Tomar los otros archivos para solamente agregar este archivo en el HTML, en luga
 - Conviene hacer archivos más pequeños, de forma modular, para no tener que
 importar uno por uno, sino que se puedan todos desde un solo archivo.
 */
+
+/** 
+ * Config: Configuración general para el sitio, incluyendo variables para los 
+ * colores de diversos elementos.
+ * 
+ * - [*]
+ * - [html, body]
+ * - [:root]: Esta pseudoclase afecta a todo el sitio web, y se definen los
+ * colores, por lo que se pueden utilizar en todo el sitio solo llamándolos.
+ * */
 @import url("config.css");
+/** 
+ * Text: Todo lo que tenga que ver con textos, headings y sus formatos.
+ * 
+ * - [.h1 al .h6] y los respectivos headings como etiquetas: [h1 al h6]
+ * - [.display-1 al display-4]: Cambiar tamaño de fuente.
+ * - [.text-primary]
+ * - [.text-secondary]
+ * - [.text-success]
+ * - [.text-info]
+ * - [.text-warning]
+ * - [.text-danger]
+ * - [.text-light]
+ * - [.text-dark]
+ */
 @import url("text.css");
+/** 
+ * Utilities: Colores de fondo y bordes y sus variantes. 
+ * 
+ * - [.bg]
+ * - [.border]
+ * */
 @import url("utilities.css");
+/** 
+ * Components: Compuesto por botones, tablas y sus variantes.
+ * 
+ * - [.btn]
+ * - [.table]
+ */
 @import url("components.css");

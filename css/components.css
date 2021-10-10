@@ -123,15 +123,111 @@
 /* --------------------------------- TABLAS --------------------------------- */
 
 .table {
-  /* Para que no haya separaciones entre líneas y haya una sola línea. */
+  /** 
+   * Entre cada borde hay un espacio en blanco, por lo que en table tenemos que 
+   * definir un `border-collapse: collapse;` 
+   * 
+   * Para que no haya separaciones entre líneas y haya una sola línea.
+   * */
   border-collapse: collapse;
+  /* Hacer ancho más grande para que el contenido no se vea tan compacto. */
   width: 100%;
+  /**
+   *  Margen para despegar cualquier contenido que se encuentre alrededor de la
+   * tabla. 
+   * */
   margin-bottom: 1em;
 }
 
+/** 
+ * Elementos que se encuentran dentro de las tablas.
+ * Son tanto en header (th), como el data (td).
+ *  */
 .table th,
 .table td {
-  /* Entre cada borde hay un espacio en blanco, por lo que en table tenemos que definir un `border-collapse: collapse;` */
+  /** No todas las tablas llevarán los elementos centrados, por lo que no se
+   * recomienda poner el text-align. 
+   * 
+   * text-align: center;
+   * 
+   * */
+  /** Ponemos algo de padding para que no queden tan pegados los elementos. */
   padding: 0.5em;
   border-top: 1px solid var(--border-color);
+}
+
+/**
+ * - Color de fondo de celdas dependiendo de su tipo. Los colores serán clear, a
+ * excepción de [light] y [dark]. 
+ *  
+ *  - Encabezados de la tabla  (th) ---
+ * Para que la tabla se vea mejor, podemos hacer que los encabezados sean más
+ * oscuros.
+ * */
+
+.table-primary {
+  color: #fff;
+  background-color: var(--color-primary-clear);
+}
+.table-primary th {
+  /* background-color: var(--color-primary-darked); */
+  background-color: var(--color-primary);
+}
+
+.table-secondary {
+  color: #fff;
+  background-color: var(--color-secondary-clear);
+}
+.table-secondary th {
+  background-color: var(--color-secondary-darked);
+}
+
+.table-success {
+  color: #fff;
+  background-color: var(--color-success-clear);
+}
+.table-success th {
+  background-color: var(--color-success-darked);
+}
+
+.table-info {
+  color: #fff;
+  background-color: var(--color-info-clear);
+}
+.table-info th {
+  background-color: var(--color-info-darked);
+}
+
+.table-warning {
+  color: #222;
+  background-color: var(--color-warning-clear);
+}
+.table-warning th {
+  color: #fff;
+  background-color: var(--color-warning-darked);
+}
+
+.table-danger {
+  color: #fff;
+  background-color: var(--color-danger-clear);
+}
+.table-danger th {
+  background-color: var(--color-danger-darked);
+}
+
+.table-light {
+  color: #222;
+  background-color: var(--color-light);
+}
+.table-light th {
+  background-color: var(--color-light-darked);
+}
+
+.table-dark {
+  color: #fff;
+  background-color: var(--color-dark);
+}
+.table-dark th {
+  color: #fff;
+  background-color: var(--color-dark-darked);
 }

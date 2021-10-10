@@ -25,7 +25,7 @@ body {
 :root {
   /* Colores de bordes. */
   --border-color: #dee2e6;
-  
+
   /** 
    * Definimos el color primario. 
    * No definir colores que no se vean bien, como amarillos chillones o del
@@ -47,30 +47,42 @@ body {
   --color-dark: #343a40;
 
   /** 
+   * - BOTONES ---
    * Podemos hacer versiones más claras y más oscuras de cada uno de los
    * colores. Esto ayuda para los botones, por ejemplo.
+   * 
+   *    --color-tipo-darked
+   * 
+   * - TABLAS ---
+   * En lugar de aplicar colores más oscuros a los elementos como en el caso de 
+   * los botones, se aplican colores más claros. Esto se puede ver en Bootstrap.
+   * 
+   *    --color-tipo-clear
+   * 
    * */
   --color-primary-darked: #0c4fb3;
-  --color-primary-clear: #;
+  --color-primary-clear: #5d97ec;
 
   --color-secondary-darked: #8f959b;
-  --color-secondary-clear: #;
+  --color-secondary-clear: #adb5bd;
 
   --color-success-darked: #115837;
-  --color-success-clear: #;
+  --color-success-clear: #568f74;
 
   --color-info-darked: #127d8d;
-  --color-info-clear: #;
+  --color-info-clear: #70b3bd;
 
   --color-warning-darked: #c7980b;
-  --color-warning-clear: #;
+  --color-warning-clear: #ffe28a;
 
   --color-danger-darked: #af2835;
-  --color-danger-clear: #;
+  --color-danger-clear: #df7e87;
 
+  /** 
+   * Para los colores light y dark prefiere hacer una excepción respecto a 
+   * poner un nuevo color con la modalidad ´clear.´ 
+   * */
   --color-light-darked: #c9caca;
-  --color-light-clear: #;
 
-  --color-dark-darked: #191c1f;
-  --color-dark-clear: #;
+  --color-dark-darked: hsl(210, 11%, 11%);
 }

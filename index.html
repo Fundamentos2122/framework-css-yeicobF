@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/framework.css">
   <title>
-    2P | Creación de nuestro propio Framework | Martes, 5 de OCTUBRE del 2021
+    2P | Creación de nuestro propio Framework | Iniciado: Martes, 5 de OCTUBRE
+    del 2021
   </title>
 
   <style>
@@ -101,26 +102,29 @@
   <br><br><br>
 
   <!-- table>(tr>(th{Clave unica}+th{Nombre}+th{Apellidos}))+(tr>td{291423}+td{Jacob}+td{Flores})+(tr>td{122345}+td{Josué Sánchez}+td{Sánchez}) -->
-  <table>
+  <table class="table table-primary">
+    <!--
+      Pondré estilos en las celdas para ver cómo quedan todos o la mayoría. 
+    -->
     <tr>
-      <th>Clave unica</th>
+      <th>Clave única</th>
       <th>Nombre</th>
       <th>Apellidos</th>
     </tr>
     <tr>
-      <td>291423</td>
+      <td class="table-secondary">291423</td>
       <td>Jacob</td>
-      <td>Flores</td>
+      <td class="table-success">Flores</td>
     </tr>
     <tr>
-      <td>122345</td>
-      <td>Josué Sánchez</td>
-      <td>Sánchez</td>
+      <td class="table-info">122345</td>
+      <td class="table-warning">Josué Sánchez</td>
+      <td class="table-danger">Sánchez</td>
     </tr>
     <tr>
-      <td>098765</td>
+      <td class="table-light">098765</td>
       <td>Fernando</td>
-      <td>Herrera</td>
+      <td class="table-dark">Herrera</td>
     </tr>
   </table>
 </body>
