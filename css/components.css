@@ -231,3 +231,82 @@
   color: #fff;
   background-color: var(--color-dark-darked);
 }
+
+/* ---------------------------------- MODAL --------------------------------- */
+.modal {
+  /**
+   *  El fondo del modal abarca toda la pantalla. 
+   * 
+   * - La posición será fixed, ya que no cambiará.
+   * */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(58, 58, 58, 0.411); */
+  background-color: rgba(58 58 58 / 0.411);
+
+  /** 
+   * z-index 
+   * 
+   * - Qué tan atrás o qué tan adelante están los elementos dentro de sí.
+   * 
+   * - Si queremos que esté encima de los demás, hay que ponerle un valor más alto.
+   * */
+  z-index: 1050;
+  overflow: hidden;
+}
+
+/* Contenido del modal. */
+
+.modal-content {
+  /* Ancho máximo. */
+  max-width: 500px;
+  /**
+   *  Tratar de centrar el elemento. 
+   * - Ponemos margen superior e inferior, y el horizontal automático para que
+   * se centre en pantalla.
+   * */
+  margin: 1em auto;
+  position: relative;
+  background-color: white;
+  border-radius: 0.25em;
+  /** 
+   * Ponemos el padding igual al border-radius, para que si hay otro elemento 
+   * anidado dentro de esta clase, no quede en la mera orilla y los bordes no 
+   * terminen chocando.
+   *  */
+  padding: 0.25em;
+
+  display: flex;
+  /* Que los elementos del flex ocupen todo el ancho. */
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 0.5em 1em;
+  display: flex;
+  /* Separamos los elementos poniendo uno en cada orilla. */
+  justify-content: space-between;
+}
+
+.modal-body {
+  padding: 0.5em 1em;
+  /* Ponemos una línea divisoria. */
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--border-color);
+  overflow: auto;
+}
+
+.modal-footer {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Cualquier elemento que este dentro, tenga un margen de 0.25em. */
+.modal-footer > * {
+  margin: 0.25em;
+}
