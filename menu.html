@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/framework.css">
+  <title>Menu | Martes, 12 de OCTUBRE 2021</title>
+</head>
+
+<body>
+  <!-- 
+    Un nav, que podrías ser un div, pero ayuda en cuanto a la metadata, 
+    indicando que se trata de una navbar.
+  -->
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">Nombre de la página</a>
+    <div class="navbar-collapse">
+      <!-- Contenedor de elementos del menú. -->
+      <ul class="navbar-nav">
+        <!-- Elementos individuales. -->
+        <li class="nav-item">
+          <a href="" class="nav-link">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="" class="nav-link">Categorías</a>
+          <!-- Dropdown menu desplegable de categorías. -->
+          <ul class="dropdown-menu show">
+            <!-- 
+              El menú sale oculto por default, pero con la clase "show", la
+              cual se agregará con Javascript, mostrará el menú con la
+              propiedad "display: block;".
+            -->
+            <li>
+              <a href="" class="dropdown-item">Categoría 1</a>
+            </li>
+            <li>
+              <a href="" class="dropdown-item">Categoría 2</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="" class="nav-link">Usuarios</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+</html>

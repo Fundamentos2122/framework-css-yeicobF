@@ -256,6 +256,20 @@
    * */
   z-index: 1050;
   overflow: hidden;
+
+  /* MS Edge */
+  -ms-overflow-style: none;
+  /* Mozilla Firefox */
+  scrollbar-width: none;
+}
+
+/** 
+ * Hay funcionalidades que no son compatibles con todos los navegadoers, por lo 
+ * que tendremos que utilizar propiedades específicas y diferentes dependiendo 
+ * del entorno. */
+/* Chrome, Opera, .. */
+.modal::-webkit-scrollbar {
+  display: none;
 }
 
 /* Contenido del modal. */
@@ -309,4 +323,89 @@
 /* Cualquier elemento que este dentro, tenga un margen de 0.25em. */
 .modal-footer > * {
   margin: 0.25em;
+}
+
+/* ---------------------------------- MENÚ ---------------------------------- */
+
+.navbar {
+  /* Flexbox. */
+  display: flex;
+  /**
+   * Display de los elementos (es cuestión de gustos) 
+   * - Logo a la izquierda y secciones del menú a la derecha.
+   * */
+  justify-content: space-between;
+  background-color: var(--color-light);
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding: 1em;
+  /* Ya que se trata de un link. */
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+/* Lista de elementos del menú. */
+.navbar-nav {
+  display: flex;
+  margin: 0;
+  padding: 1em;
+}
+
+.navbar-nav .nav-item {
+  /* Que la lista no tenga el bullet. */
+  list-style: none;
+}
+/* .navbar-nav .nav-item:hover {
+  background-color: var(--color-light-darked);
+  /* color: var(--color-dark-darked); */
+/* } */
+
+.nav-link {
+  display: block;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.nav-link:hover {
+  background-color: var(--color-light-darked);
+  /* color: var(--color-light); */
+}
+
+/* ------------------------------ DROPDOWN MENU ----------------------------- */
+
+.dropdown-menu {
+  position: absolute;
+  /**
+   * Que el menú vaya por abajo del navbar, ya que se desplegará a partir de 
+   * uno de los elementos de dicho menú.
+   * */
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.dropdown-menu .dropdown-item {
+  /* Que permita poner el padding. */
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--color-light);
+}
+
+/* Clase para mostrar elementos con Javascript. */
+.show {
+  display: block;
 }
