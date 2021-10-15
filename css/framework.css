@@ -15,6 +15,12 @@ importar uno por uno, sino que se puedan todos desde un solo archivo.
  * colores, por lo que se pueden utilizar en todo el sitio solo llamándolos.
  * */
 @import url("config.css");
+
+/** 
+ * Por lo general, este archivo de grid va al inicio.
+ */
+@import url("grid.css");
+
 /** 
  * Text: Todo lo que tenga que ver con textos, headings y sus formatos.
  * 
@@ -30,6 +36,7 @@ importar uno por uno, sino que se puedan todos desde un solo archivo.
  * - [.text-dark]
  */
 @import url("text.css");
+
 /** 
  * Utilities: Colores de fondo y bordes y sus variantes. 
  * 
@@ -37,6 +44,7 @@ importar uno por uno, sino que se puedan todos desde un solo archivo.
  * - [.border]
  * */
 @import url("utilities.css");
+
 /** 
  * Components: Compuesto por botones, tablas y sus variantes.
  * 

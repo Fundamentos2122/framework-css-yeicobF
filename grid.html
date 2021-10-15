@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/framework.css">
+  <title>Grid | Jueves, 14 de OCTUBRE del 2021</title>
+</head>
+
+<body class="container">
+  <!-- Aquí estaremos probando el sistema de malla. -->
+  <!-- 
+    Parte de un elemento principal, es en donde estará contenida la 
+    información. Por default, tenemos el elemento body.
+    
+    - Este elemento principal tendrá una clase para mostrar los elementos en el
+    Viewport.
+
+    - Cuando trabajamos en una página como tal, no solemos tener la información 
+    pegada a los bordes, sino que solemos dejar un padding a los laterales para 
+    que la información no se quede pegada a los bordes. Esto se puede notar 
+    sobre todo en los diseños móviles, ya que son contados los elementos que 
+    están pegados a los lados. Todos suelen tener cierto padding.
+  -->
+
+  <h1>Hola, mundo</h1>
+
+  <!-- 
+    Tendremos una malla que tendrá 12 secciones distintas, como en Bootstrap.
+  -->
+  <!-- div.row>div.col-$*12 -->
+  <!-- div.row>div.col-1{Col}*12 -->
+  <div class="row">
+    <!-- 12 Columnas. Al inicio se mostrarán en bloque. -->
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+  </div>
+
+  <!-- 6 columnas de 2 gap: 12 secciones en total. -->
+  <!-- div.row>div.col-2*6 -->
+  <div class="row">
+    <div class="col-2">Col</div>
+    <div class="col-2">Col</div>
+    <div class="col-2">Col</div>
+    <div class="col-2">Col</div>
+    <div class="col-2">Col</div>
+    <div class="col-2">Col</div>
+  </div>
+
+  <!-- 4 columnas de 3 gap: 12 secciones en total. -->
+  <!-- div.row>.col-3{Col}*4 -->
+  <div class="row">
+    <div class="col-3">Col</div>
+    <div class="col-3">Col</div>
+    <div class="col-3">Col</div>
+    <div class="col-3">Col</div>
+  </div>
+</body>
+
+</html>

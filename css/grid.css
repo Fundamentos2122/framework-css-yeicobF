@@ -1,0 +1,68 @@
+/* ------------------------------- Contenedor. ------------------------------ */
+.container {
+  padding: 0 1em;
+}
+
+/* ----------------------------------- ROW ---------------------------------- */
+
+/** 
+ * A pesar de que utilizaremos el modelo de malla, utilizaremos Flexbox, ya que 
+ * es más versatil.
+ *  */
+.row {
+  /* Ya cada columna no ocupa un renglón, sino que se van a amontonar. */
+  display: flex;
+  /**
+   * Partiendo de la lógica de que la pantalla estará dividida en 12 secciones, 
+   * cada sección utilizará una 12va parte del 100%.
+   * 
+   * - Nos vamos a basar en el porcentaje de la pantalla o viewport.
+   * */
+}
+
+/* -------------------------------- COLUMNAS -------------------------------- */
+
+/**
+ *  Esto no va dentro del framework, pero nos ayudará a visualizar. 
+ * 
+ * - Así podemos ver cada uno de los elementos y el espacio que ocupa.
+ * */
+.row > * {
+  border: black 1px solid;
+}
+
+/**
+ * Con un guión indicaremos el número de secciones que queramos que abarque 
+ * ese elemento. 
+ * 
+ * `.col-1` -> Ocupar 1 columna.
+ * `.col-2` -> Ocupar 2 columna.
+ * `.col-n` -> Ocupar n columnas.
+ * */
+.col-1 {
+  /** 
+   * - flex-grow: Qué tanto va a crecer un elemento respecto a los demás que 
+   * están dentro del contenedor. Sirve para crecer.
+   * 
+   * - flex-shrink: Para que el elemento decrezca.
+   * 
+   * - flex-basis: Tamaño inicial que tendrá el elemento. En este caso, indicaremos que se trata de una 12va parte del 100%.
+   * */
+
+  /* flex: flex-grow flex-shrink flex-basis;*/
+  /* 8.3333 con 4 dígitos, siendo este el 1/12 porcentaje del 100%. */
+  flex: 0 0 8.333%;
+
+  /* Ancho máximo para que no se pueda superar el tamaño designado. */
+  max-width: 8.3333%;
+}
+
+.col-2 {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
