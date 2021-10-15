@@ -67,6 +67,85 @@
     <div class="col-3">Col</div>
     <div class="col-3">Col</div>
   </div>
+
+  <!-- 
+    Ahora mezclamos columnas de diferentes tamaños para rellenar los 12 
+    espacios. 
+  -->
+  <!-- div.row>.col-${Col-$}*3+.col-3{Col-3} -->
+  <div class="row">
+    <div class="col-1">Col-1</div>
+    <div class="col-2">Col-2</div>
+    <div class="col-3">Col-3</div>
+    <div class="col-3">Col-3</div>
+    <div class="col-2">Col-2</div>
+    <div class="col-1">Col-1</div>
+  </div>
+
+  <div class="row">
+    <!-- Aquí habrá un overflow controlado por flex-wrap: wrap; -->
+    <div class="col-4">Col</div>
+    <div class="col-2">Col</div>
+    <div class="col-7">Col</div>
+  </div>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laudantium
+    natus omnis quae nemo vitae, ex nihil fugit. Consectetur, cum!
+  </p>
+
+  <!-- 
+    A veces necesitamos que la columna se adapte al tamaño del contenido y no 
+    tomar el tamaño máximo.
+  -->
+  <!-- .row>.col-auto>lorem100 -->
+  <div class="row">
+    <div class="col-auto">
+      Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Rem alias doloribus similique error, laboriosam consequatur
+      cupiditate nam repudiandae soluta optio tenetur numquam ducimus illum ut
+      obcaecati iure quam eaque, dolorem perspiciatis delectus repellendus?
+      Nostrum ullam adipisci dicta similique ipsa, vero laboriosam eveniet alias
+      reprehenderit ex eaque aut accusantium quam praesentium omnis? Explicabo,
+      nesciunt. Nulla soluta tenetur blanditiis quia ut odio earum possimus
+      quas! Excepturi mollitia cum molestias laboriosam quia optio rerum numquam
+      tempore provident dignissimos placeat veniam, reprehenderit voluptate nisi
+      itaque soluta voluptatem velit amet reiciendis nostrum ipsa. Mollitia
+      minima nihil voluptas, dolore at rerum quia dignissimos in odio totam.
+    </div>
+    <div class="col-1">Col</div>
+    <div class="col-1">Col</div>
+  </div>
+
+  <!-- .row>(.col-auto.border{Hola, Mundo}+.col-2.border{Otra columna que ocupe lo demás.}) -->
+  <div class="row">
+    <div class="col-auto border">Hola, Mundo</div>
+    <!-- 
+      Queremos que esta columna ocupe todo lo demás de espacio. No podemos depender del contenido del primer elemento.
+    -->
+    <div class="col-2 border">Otra columna que ocupe lo demás.</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-7 border">Hola, mundo</div>
+    <div class="col-5 border">Hola</div>
+
+    <!-- 
+      Tener cuidado con la clase ".col", ya que si nos pasamos del tamaño de 
+      columnas con las que tienen un tamaño designado, esta podrá tomar un 
+      tamaño de renglón completo.
+    -->
+    <div class="col border">Otra columna</div>
+  </div>
+
+  <div class="row">
+    <!-- 
+      Si tenemos dos elementos con la clase ".col", ocuparán el tamaño restante entre el número de cols, que en este caso sería 2.
+    -->
+    <div class="col border">Hola, mundo</div>
+    <div class="col border">Otra columna</div>
+  </div>
 </body>
 
 </html>

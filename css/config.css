@@ -85,4 +85,10 @@ body {
   --color-light-darked: #c9caca;
 
   --color-dark-darked: hsl(210, 11%, 11%);
+
+  /**
+   *  Padding del contenedor como variable para que aplique a los elementos 
+   * dependientes de forma automática. 
+   * */
+  --container-padding: 1em;
 }

@@ -1,6 +1,6 @@
 /* ------------------------------- Contenedor. ------------------------------ */
 .container {
-  padding: 0 1em;
+  padding: 0 var(--container-padding);
 }
 
 /* ----------------------------------- ROW ---------------------------------- */
@@ -12,23 +12,124 @@
 .row {
   /* Ya cada columna no ocupa un renglón, sino que se van a amontonar. */
   display: flex;
-  /**
-   * Partiendo de la lógica de que la pantalla estará dividida en 12 secciones, 
-   * cada sección utilizará una 12va parte del 100%.
+  /** 
+   * Si el tamaño de las columnas y su suma sobrepasa el tamaño máximo de las 
+   * 12 columnas, se hará un overflow, por lo que se producirá un scroll. Esto 
+   * se puede solucionar poniendo un flex-wrap.
    * 
-   * - Nos vamos a basar en el porcentaje de la pantalla o viewport.
-   * */
-}
+   * - Si se sobrepasa el tamaño, entonces se pasará el elemento a la siguiente 
+   * línea.
+   * 
+   * - No deberíamos tener scroll horizontal en CASI NINGÚN CASO.
+  */
+  flex-wrap: wrap;
 
-/* -------------------------------- COLUMNAS -------------------------------- */
+  /** 
+   * Agregar un margen negativo para acomodar /alinear los elementos junto a 
+   * los demás que están dentro del container, debido a que hay un padding 
+   * aplicado en general, y los elementos de la clase .row no quedan alineados 
+   * en el mismo eje.
+   * 
+   * - Me imagino que esto también se podría hacer con una pseudo-clase o algo 
+   * así, por ejemplo:
+   * 
+   *    .container :not(.row) { padding: 0 1em; }
+   * 
+   * 
+   */
+
+  /**
+   *  Podemos hacer que el padding sea una variable. De esta manera, todos los 
+   * elementos que dependen de este valor, podrán obtenerlo con la variable en 
+   * lugar de modificar manualmente cada uno de estos valores.
+   * */
+  margin: 0 calc(-1 * var(--container-padding));
+}
 
 /**
  *  Esto no va dentro del framework, pero nos ayudará a visualizar. 
  * 
  * - Así podemos ver cada uno de los elementos y el espacio que ocupa.
  * */
-.row > * {
+/* .row > * {
   border: black 1px solid;
+} */
+
+/* -------------------------------- COLUMNAS -------------------------------- */
+/**
+ * Partiendo de la lógica de que la pantalla estará dividida en 12 secciones, 
+ * cada sección utilizará una 12va parte del 100%.
+ * 
+ * - Nos vamos a basar en el porcentaje de la pantalla o viewport.
+ * */
+
+/* Selector para dar padding a todos los elemementos. */
+
+/**
+ * Podríamos utilizar el selector en el cual el valor comienza con una cadena, 
+ * pero entonces si comenzamos con otra clase distinta, no aplicaría. Pero, en 
+ * caso de que fuera así, entonces podría ser lo siguiente:
+ * 
+ * [class^="col-"] {}
+ * */
+.col,
+.col-auto,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  padding: 0 var(--container-padding);
+}
+
+/** 
+ * Columna que no tiene tamaño ni tamaño automático, sino que se ajustará al 
+ * contenido, al ancho restante.
+ * 
+ * - No importa si la pones antes o después, va a seguir ocupando el tamaño 
+ * restante. 
+ * */
+.col {
+  /** 
+   * Factor de crecimiento: flex-grow;
+   * - Con "1" hacemos que crezca con todo el tamaño restante.
+   * - Con "0" ocuparía el mismo tamaño que los demás.
+   * */
+  flex-grow: 1;
+
+  /**
+   * Hay que dar un
+   *      flex-basis: 0;
+   * para que el tamaño inicial del elemento sea 0, ya que no sabemos cuánto 
+   * podrá medir.
+  */
+  flex-basis: 0;
+
+  /**
+   * El equivalente de las propiedades definidas con anterioridad:
+   * 
+   * - flex-grow: 1;
+   * - flex-basis: 0;
+   * 
+   * es:
+   * 
+   * - flex: flex-grow flex-shrink flex-basis;
+   * - flex: 1 0 0;
+    */
+
+  /** 
+  * Poniendo el tamaño máximo para que no pueda superar el tamaño del 
+  * contenedor padre. Con las demás propiedades ya tomaría el tamaño restante.
+  */
+  max-width: 100%;
 }
 
 /**
@@ -38,6 +139,14 @@
  * `.col-1` -> Ocupar 1 columna.
  * `.col-2` -> Ocupar 2 columna.
  * `.col-n` -> Ocupar n columnas.
+ * 
+ * - La ventaja de estas columnas es que siempre serán flexibles y adaptables 
+ * al contenido y tamaño del navegador. Aunque es cierto que a veces de tan 
+ * pequeña que se hace la pantalla, los elementos ya no se ven bien o el 
+ * texto/contenido se puede salir.
+ * 
+ * - En diseño móvil no se utilizan todas las 12 secciones, por lo que esto no 
+ * suele suceder.
  * */
 .col-1 {
   /** 
@@ -65,4 +174,59 @@
 .col-3 {
   flex: 0 0 25%;
   max-width: 25%;
+}
+.col-4 {
+  flex: 0 0 33.3333;
+  max-width: 33.3333;
+}
+
+.col-5 {
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+.col-8 {
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
+}
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.col-10 {
+  flex: 0 0 83.3333%;
+  max-width: 83.3333%;
+}
+.col-11 {
+  flex: 0 0 91.6667%;
+  max-width: 91.6667%;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* ----------- COL AUTO: Ajustar columna al tamaño del contenido. ----------- */
+
+/* Hacer que el tamaño de la columna se ajuste al contenido. */
+.col-auto {
+  /** 
+   * Tanto para flex-grow como para flex-shrink pondremos 0, pero para
+   * flex-basis hay que darle un auto, para que se ajuste automáticamente al 
+   * contenido.
+   * */
+  /* flex-basis: auto; */
+  flex: 0 0 auto;
+
+  width: auto;
+  /* Que no supere el ancho total del contenedor */
+  max-width: 100%;
 }
