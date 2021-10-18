@@ -15,10 +15,35 @@
   -->
   <!-- .row>.col-4+.col-8 -->
   <div class="row">
-    <div class="col-4 border border-primary" style="height: 400px;">
+    <!--
+      1. [.col-12] Comienza utilizando un tamaño de 12 columnas.
+      2. [.col-md-4] Utiliza 4 columnas para el tamaño mediano.
+      3. [.col-md-8] Utiliza 8 columnas para el tamaño mediano.
+    -->
+    <div class="col-12 col-md-4 border border-primary" style="height: 400px;">
       Side bar
     </div>
-    <div class="col-8 border border-success">Contenido principal</div>
+    <div class="col-12 col-md-8 border border-success" style="height: 400px;">
+      Contenido principal
+    </div>
+  </div>
+  <div class="row">
+    <!-- 
+      1. Ocupar 12 secciones en el primer tamaño. Poner elementos encima de otros.
+      2. Al llegar a xl, cada elemento ocupe 4 secciones.
+      3. Los otros elementos que ocupen otro espacio distinto.
+    -->
+    <div class="col-12 col-xl-4 border border-primary" style="height: 200px;">
+      Elemento 1
+    </div>
+    <div class="col-12 col-md-6 col-xl-4 border border-success"
+      style="height: 200px;">
+      Elemento 2
+    </div>
+    <div class="col-12 col-md-6 col-xl-4 border border-success"
+      style="height: 200px;">
+      Elemento 3
+    </div>
   </div>
 </body>
 
