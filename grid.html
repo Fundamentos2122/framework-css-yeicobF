@@ -10,6 +10,21 @@
 </head>
 
 <body class="container">
+  <!--   
+    <body class="container-fluid container-sm">
+
+      Esto nos permitirá tener un .container-fluid, el cual, ocupará todo el 
+      espacio de la pantalla, pero cuando llegue al tamaño máximo de la clase 
+      que define el tamaño ".container-tamaño", dejará de ocupar todo el ancho 
+      y solo ocupará hasta el definido por dicha clase.
+  -->
+  <!-- 
+  <body class="container-fluid"> 
+
+    Esta clase hará que se ocupe el tamaño de toda la página, en lugar de la 
+    clase "container", la cual no utilizará todo el espacio y se centrará en el 
+    viewport.
+-->
   <!-- Aquí estaremos probando el sistema de malla. -->
   <!-- 
     Parte de un elemento principal, es en donde estará contenida la 
@@ -121,7 +136,8 @@
   <div class="row">
     <div class="col-auto border">Hola, Mundo</div>
     <!-- 
-      Queremos que esta columna ocupe todo lo demás de espacio. No podemos depender del contenido del primer elemento.
+      Queremos que esta columna ocupe todo lo demás de espacio. No podemos 
+      depender del contenido del primer elemento.
     -->
     <div class="col-2 border">Otra columna que ocupe lo demás.</div>
   </div>
@@ -141,11 +157,15 @@
 
   <div class="row">
     <!-- 
-      Si tenemos dos elementos con la clase ".col", ocuparán el tamaño restante entre el número de cols, que en este caso sería 2.
+      Si tenemos dos elementos con la clase ".col", ocuparán el tamaño restante 
+      entre el número de cols, que en este caso sería 2.
     -->
     <div class="col border">Hola, mundo</div>
     <div class="col border">Otra columna</div>
   </div>
+
+
+
 </body>
 
 </html>

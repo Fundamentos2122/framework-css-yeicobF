@@ -1,6 +1,130 @@
 /* ------------------------------- Contenedor. ------------------------------ */
-.container {
+/* Contenedor de todo el contenido de la página. */
+.container,
+/**
+ * Esta clase de .container-fluid ocupa todo el ancho. En el caso del 
+ * ".container" no ocupará todo el espacio, ya que está afectada por las media 
+ * queries que definimos, pero ".container-fluid" no tiene media queries que 
+ * modifiquen su tamaño, por lo que se puede definir aquí mismo.
+ * 
+ * Solo tendremos que poner el nombre de la clase en la etiqueta y se aplicará 
+ * este estilo, el cual ocupará todo el tamaño de la pantalla. Esto es por si 
+ * no quieres que quede centardo en la pantalla y ocupe todo el espacio.
+ * */
+.container-fluid,
+/* 
+ * - Tendremos clases que definirán tamaños del contenedor, las cuales se irán 
+ * concatenando en las media queries conforme vaya aumentando el tamaño:
+ *    - .container-sm (small)
+ *    - .container-md (medium)
+ *    - .container-lg (large)
+ *    - .container-xl (extra large)
+ * 
+ * Estas se irán poniendo conforme vayan ocupando su respectivo tamaño.
+ * 
+ * - Esto sirve para indicar en mi código que le aplique un tipo de contenedor. 
+ * A partir de un punto, solo ocupará el tamaño máximo del contenedor, sin 
+ * superar la medida del tipo de contenedor elegido.
+ * 
+ * - Esto nos puede servir para combinar con la clase "container-fluid", por lo 
+ * que seguirá ocupando el ancho máximo, y cuando se llegue a la medida máxima 
+ * del "container-tamaño", dejará de ser ".container-fluid" y comience a tener 
+ * márgenes a los costados, dependiendo del tamaño definido.
+ */
+.container-sm, .container-md, .container-lg {
+  width: 100%;
   padding: 0 var(--container-padding);
+  /**
+   * Centramos el contenedor, ya que no ocupará todo el tamaño de la pantalla.
+   * 
+   * Margen de 0 arriba y abajo, y auto a los lados para que siempre esté 
+   * centrado verticalmente.
+   */
+  margin: 0 auto;
+}
+
+/* ------------------ MEDIA QUERIES PARA DISEÑO RESPONSIVO ------------------ */
+
+/**
+ * Cuando hacemos un diseño de página web, debemos de tener el principal motivo 
+ * para la que se hará el sitio. Es decir, los tamaños más comunes, la 
+ * orientación del viewport (horizontal: ancho más grande que el alto, 
+ * vertical: más alto que ancho - más recurrente en un dispositivo móvil - 
+ * tablet, teléfono).
+ * 
+ * A partir de esto, se va a plantear el diseño.
+ * 
+ * Al incio, se comenzó a hacer todo principalmente en computadoras primero, ya 
+ * que existieron antes que los smartphones, pero ahora existe un diseño 
+ * llamado "mobile first", el cual se trabaja en el Framework más popular de 
+ * CSS: Bootstrap. En este enfoque se trabaja primero con lo más pequeño, 
+ * avanzando hasta lo más grande.
+ * 
+ * - En este caso podremos el diseño para 3 tamaños de pantalla, aunque en el 
+ * proyecto solo tendremos que hacer 2: pantalla grande y pantalla pequeña.
+ * 
+ * Cuando los tamaños de las pantallas son más grandes, se basan en el principio de que el diseño no abarca toda la pantalla.
+*/
+
+/** 
+ * Cuando pase de 576px. 
+ * 
+ * - Tamaño para dispositivo pequeño como un smartphone.
+ * 
+ * - Los tamaños qeu se establecen para el contenedor son por las medidas del 
+ * padding y elementos así, por lo que así las definió el profe.
+ */
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+/** 
+ * Cuando pase de los 768px.
+ * Tamaño para dispositivos como Tablet.
+*/
+@media (min-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: 720px;
+  }
+}
+
+/**
+ * Cuando pase de los 992px.
+ * 
+ * Para un dispositivo más grande. Esto puede variar dependiendo del tamaño del 
+ * monitor, por ejemplo: una laptop, a comparación de una computadora de 
+ * escritorio.
+ */
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 960px;
+  }
+}
+
+/**
+ * Para un dispositivo aún más grande. 
+ * 
+ * Bootstrap tiene un prinicipio en el que se basan muchas páginas, que es en 
+ * donde no tienes que abarar todo el tamaño de la pantalla, sino que cuando ya 
+ * es muy grande, el contenido se puede centrar en esta.
+ */
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1140px;
+  }
 }
 
 /* ----------------------------------- ROW ---------------------------------- */
