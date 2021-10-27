@@ -20,8 +20,12 @@ h6,
   /**
    *  Tamaño máximo del ancho, por lo que la línea se va a partir si se supera
    * el tamaño.
+   * 
+   * - Creo que esto luego lo quitó el profe, pero yo lo seguía teniendo. Esto 
+   * hace que el texto cambie de línea casi inmediatemente, ya que tiene un 
+   * ancho máximo, y este es muy pequeño.
    * */
-  max-width: 0.5em;
+  /* max-width: 0.5em; */
   /* font-weight: 500; */
   font-weight: bold;
   line-height: 1;
