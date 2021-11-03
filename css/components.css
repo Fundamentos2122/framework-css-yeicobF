@@ -261,6 +261,11 @@
   -ms-overflow-style: none;
   /* Mozilla Firefox */
   scrollbar-width: none;
+  /** 
+   * Ocultar el modal por defecto. 
+   * Tendríamos que utilizar la clase `.show` para mostrarlo.
+   */
+  display: none;
 }
 
 /** 

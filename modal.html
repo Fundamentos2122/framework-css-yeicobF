@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="modal">
+  <div class="modal" id="modal-test">
     <div class="modal-content">
       <!-- div.modal-header{Encabezado}+div.modal-body{Cuerpo}+div.modal-footer{Footer} -->
       <!-- 
@@ -23,7 +23,8 @@
         <!-- 
           El botón se ve algo estirado en mi caso, aunque no sé muy bien por qué. 
         -->
-        <button style="height: fit-content;">X</button>
+        <button style="height: fit-content;"
+          data-dismiss="#modal-test">X</button>
       </div>
       <div class="modal-body">
         Cuerpo
@@ -47,6 +48,28 @@
 
   <div class="bg-primary">Hola, mundo</div>
 
+  <!-- Martes, 2 de NOVIEMBRE del 2021 -->
+
+  <!-- 
+    Hay que hacer que por default, un modal siempre esté oculto. Esto lo 
+    ponemos en la clase `.modal`. 
+  -->
+  <!-- 
+    data-toggle="" y data-target son propiedades que definió el profe y no la tiene HTML. Se basa en lo que hace Bootstrap.
+
+    - data-target tiene un selector dentro, el cual, será utilizado con JS.
+
+    button.btn.btn-success[data-toggle="modal" data-target="#modal-test"]{Abrir modal} 
+  -->
+  <button class="btn btn-success" data-toggle="modal"
+    data-target="#modal-test">Abrir modal</button>
+
+  <button class="btn btn-success" data-toggle="modal" data-target="#otro-modal">
+    Abrir modal 2 (no se muestra porque su
+    [data-target] tiene un #id de un elemento que no existe).
+  </button>
+
+  <script src="js/framework.js"></script>
 </body>
 
 </html>
