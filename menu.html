@@ -16,18 +16,23 @@
   -->
   <nav class="navbar">
     <a href="#" class="navbar-brand">Nombre de la página</a>
+    <!-- 
+      Para la función de despliegue u ocultado del menú. 
+      Esto es para el diseño responsivo, que cuando se cambie de tamaño se ocupe o no.
+    -->
+    button
+
     <div class="navbar-collapse">
       <!-- Contenedor de elementos del menú. -->
       <ul class="navbar-nav">
         <!-- Elementos individuales. -->
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a href="" class="nav-link">Inicio</a>
         </li>
 
-        <li class="nav-item">
-          <a href="" class="nav-link">Categorías</a>
+          <a href="" class="nav-link dropdown">Categorías</a>
           <!-- Dropdown menu desplegable de categorías. -->
-          <ul class="dropdown-menu show">
+          <ul class="dropdown-menu">
             <!-- 
               El menú sale oculto por default, pero con la clase "show", la
               cual se agregará con Javascript, mostrará el menú con la
@@ -48,6 +53,8 @@
       </ul>
     </div>
   </nav>
+
+  <script src="js/framework.js"></script>
 </body>
 
 </html>

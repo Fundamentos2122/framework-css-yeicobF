@@ -24,6 +24,12 @@ const attr_dismiss = "data-dismiss";
  */
 const class_modal = "modal";
 
+/** */
+const dropdown_class = "dropdown";
+
+const dropdown_toggle = "dropdown-toggle";
+const dropdown_menu_class = "dropdown-menu";
+
 /**
  * Clase para ocultar elementos.
  * @type {string}
@@ -72,6 +78,26 @@ document.addEventListener("DOMContentLoaded", function () {
   /** Asignar el evento de abrir el modal por cada uno de los elementos. */
   modal_close_buttons.forEach((element) => {
     element.addEventListener("click", closeModal);
+  });
+
+  /**
+   * Botones que abren un modal
+   *
+   * Con el `querySelectorAll` no tenemos que pasar solo un elemento, sino que
+   * pasamos combinadores con selectores. Obtenemos todos los elementos que
+   * cumplan con la sintaxis.
+   *
+   * Lo siguiente quedaría como:
+   *
+   * > `[data-toggle='modal']`
+   */
+  let dropwdown_buttons = document.querySelectorAll(
+    `[${dropdown_class} > .${dropdown_toggle}]`,
+  );
+
+  /** Asignar el evento de abrir el modal por cada uno de los elementos. */
+  dropwdown_buttons.forEach((element) => {
+    element.addEventListener("click", toggleDropdown);
   });
 });
 
@@ -132,4 +158,39 @@ function closeModal(e) {
    * mostrar el elemento.
    */
   modal.classList.remove(class_show);
+}
+
+/**
+ * Abrir y cerrar el menú con toggle.
+ * @param {PointerEvent} e Evento.
+ */
+function toggleDropdown(e) {
+  /**
+   * Evitar que se recargue la página, dado que se aplica a un link.
+   */
+  e.preventDefault();
+
+  /**
+   * Obtener submenú.
+   *
+   * Hay que acceder al elemento padre, el cual, es la lista del dropdown. Ya
+   * en ese nivel, podemos buscar lo que está en el submenú.
+   */
+  let submenu = e.target.parentNode.querySelector(`.${dropdown_menu_class}`);
+
+  /**
+   * Si ya tiene una clase, la quita.
+   * Si no tiene la clase, la agrega.
+   *
+   * Esto sería igual a lo siguiente:
+   *
+   * `
+   *   if (submenu.classList.contains(class_show)) {
+   *   submenu.classList.remove(class_show);
+   *   } else {
+   *     submenu.classList.add(class_show);
+   *   }
+   * `
+   */
+  submenu.classList.toggle(class_show);
 }

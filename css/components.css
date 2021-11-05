@@ -333,19 +333,21 @@
 /* ---------------------------------- MENÚ ---------------------------------- */
 
 .navbar {
+  align-items: center;
+  flex-wrap: wrap;
   /* Flexbox. */
   display: flex;
   /**
    * Display de los elementos (es cuestión de gustos) 
    * - Logo a la izquierda y secciones del menú a la derecha.
-   * */
+   */
   justify-content: space-between;
   background-color: var(--color-light);
+  padding: 1em;
 }
 
 .navbar-brand {
   display: inline-block;
-  padding: 1em;
   /* Ya que se trata de un link. */
   text-decoration: none;
   color: var(--color-dark);
@@ -353,11 +355,23 @@
   font-size: 1.25em;
 }
 
+/** 
+ * Mostrar y ocultar navbar. d
+ */
+.navbar-toggle {
+  padding: 0.5em;
+  height: fit-content;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+}
+
 /* Lista de elementos del menú. */
 .navbar-nav {
-  display: flex;
+  display: block;
   margin: 0;
-  padding: 1em;
+  padding: 0;
 }
 
 .navbar-nav .nav-item {
@@ -383,7 +397,7 @@
 
 /* ------------------------------ DROPDOWN MENU ----------------------------- */
 
-.dropdown-menu {
+.  {
   position: absolute;
   /**
    * Que el menú vaya por abajo del navbar, ya que se desplegará a partir de 
@@ -413,4 +427,13 @@
 /* Clase para mostrar elementos con Javascript. */
 .show {
   display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-nav {
+    display: flex;
+  }
 }
