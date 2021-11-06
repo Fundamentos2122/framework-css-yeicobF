@@ -24,10 +24,20 @@ const attr_dismiss = "data-dismiss";
  */
 const class_modal = "modal";
 
-/** */
+/**
+ * Clase para hacer un menú dropdown.
+ * @type {string}
+ */
 const dropdown_class = "dropdown";
-
+/**
+ * Hacer un toggle del dropdown. Agregarlo o quitarlo.
+ * @type {string}
+ */
 const dropdown_toggle = "dropdown-toggle";
+/**
+ * Menú que tiene el dropdown.
+ * @type {string}
+ */
 const dropdown_menu_class = "dropdown-menu";
 
 /**
@@ -41,6 +51,8 @@ const class_show = "show";
  * multimedia, solo el DOM como tal.)
  */
 document.addEventListener("DOMContentLoaded", function () {
+  /* ------------------------------ ABRIR MODAL ----------------------------- */
+
   /**
    * Botones que abren un modal
    *
@@ -62,8 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
     element.addEventListener("click", openModal);
   });
 
+  /* ----------------------------- CERRAR MODAL ----------------------------- */
+
   /**
-   * Botones que abren un modal
+   * Botones que cierran un modal
    *
    * Con el `querySelectorAll` no tenemos que pasar solo un elemento, sino que
    * pasamos combinadores con selectores. Obtenemos todos los elementos que
@@ -75,27 +89,29 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   let modal_close_buttons = document.querySelectorAll(`[${attr_dismiss}]`);
 
-  /** Asignar el evento de abrir el modal por cada uno de los elementos. */
+  /** Asignar el evento de cerrar el modal por cada uno de los elementos. */
   modal_close_buttons.forEach((element) => {
     element.addEventListener("click", closeModal);
   });
 
+  /* ------------------------------- DROPDOWN ------------------------------- */
+
   /**
-   * Botones que abren un modal
+   * Dropdown del submenú.
    *
-   * Con el `querySelectorAll` no tenemos que pasar solo un elemento, sino que
-   * pasamos combinadores con selectores. Obtenemos todos los elementos que
-   * cumplan con la sintaxis.
+   * Buscamos elementos que estén dentro de `.dropdown` y que tengan la clase
+   * `.dropdown-toggle`.
    *
-   * Lo siguiente quedaría como:
-   *
-   * > `[data-toggle='modal']`
+   * Que `.dropdown-toggle` estén inmediatamente enseguida del `.dropdown`.
    */
   let dropwdown_buttons = document.querySelectorAll(
-    `[${dropdown_class} > .${dropdown_toggle}]`,
+    `.${dropdown_class} > .${dropdown_toggle}`,
   );
 
-  /** Asignar el evento de abrir el modal por cada uno de los elementos. */
+  /**
+   * El comportamiento con "toggle" es que si le das click, se abre, y si lo
+   * vuelves a hacer, se cierra.
+   */
   dropwdown_buttons.forEach((element) => {
     element.addEventListener("click", toggleDropdown);
   });
