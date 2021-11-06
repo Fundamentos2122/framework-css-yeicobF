@@ -24,6 +24,8 @@ const attr_dismiss = "data-dismiss";
  */
 const class_modal = "modal";
 
+/* -------------------------------- DROPDOWN -------------------------------- */
+
 /**
  * Clase para hacer un menú dropdown.
  * @type {string}
@@ -39,6 +41,21 @@ const dropdown_toggle = "dropdown-toggle";
  * @type {string}
  */
 const dropdown_menu_class = "dropdown-menu";
+
+/* --------------------------------- NAVBAR --------------------------------- */
+
+/**
+ * Mostrar u ocultar el navbar o menú para celulares.
+ * @type {string}
+ */
+const navbar_toggle = "navbar-toggle";
+/**
+ * Colapsar el menú o mostrarlo dependiendo del tamaño del dispositivo.
+ * @type {string}
+ */
+const menu_collapse_class = "navbar-collapse";
+
+/* ------------------------------- UTILIDADES ------------------------------- */
 
 /**
  * Clase para ocultar elementos.
@@ -87,7 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
    *
    * > `[data-toggle='modal']`
    */
-  let modal_close_buttons = document.querySelectorAll(`[${attr_dismiss}]`);
+  let modal_close_buttons = document.querySelectorAll(`
+    [${attr_dismiss}]
+  `);
 
   /** Asignar el evento de cerrar el modal por cada uno de los elementos. */
   modal_close_buttons.forEach((element) => {
@@ -114,6 +133,21 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   dropwdown_buttons.forEach((element) => {
     element.addEventListener("click", toggleDropdown);
+  });
+
+  /* --------------------------------- NAVBAR --------------------------------- */
+
+  /** Collapse del menú. */
+  let collapse_menu_buttons = document.querySelectorAll(
+    `.${navbar_toggle}`,
+  );
+
+  /**
+   * El comportamiento con "toggle" es que si le das click, se abre, y si lo
+   * vuelves a hacer, se cierra.
+   */
+  collapse_menu_buttons.forEach((element) => {
+    element.addEventListener("click", toggleMenu);
   });
 });
 
@@ -177,7 +211,7 @@ function closeModal(e) {
 }
 
 /**
- * Abrir y cerrar el menú con toggle.
+ * Abrir y cerrar un dropdown.
  * @param {PointerEvent} e Evento.
  */
 function toggleDropdown(e) {
@@ -192,7 +226,9 @@ function toggleDropdown(e) {
    * Hay que acceder al elemento padre, el cual, es la lista del dropdown. Ya
    * en ese nivel, podemos buscar lo que está en el submenú.
    */
-  let submenu = e.target.parentNode.querySelector(`.${dropdown_menu_class}`);
+  let submenu = e.target.parentNode.querySelector(`
+    .${dropdown_menu_class}
+  `);
 
   /**
    * Si ya tiene una clase, la quita.
@@ -209,4 +245,25 @@ function toggleDropdown(e) {
    * `
    */
   submenu.classList.toggle(class_show);
+}
+
+/**
+ * Abrir y cerrar el menú con toggle.
+ * @param {PointerEvent} e Evento.
+ */
+function toggleMenu(e) {
+  /**
+   * Evitar que se recargue la página, dado que se aplica a un link.
+   */
+  e.preventDefault();
+
+  let menu = e.target.parentNode.querySelector(`
+    .${menu_collapse_class}
+  `);
+
+  /**
+   * Si ya tiene una clase, la quita.
+   * Si no tiene la clase, la agrega.
+   */
+  menu.classList.toggle(class_show);
 }

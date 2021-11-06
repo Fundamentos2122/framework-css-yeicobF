@@ -17,7 +17,8 @@
 
   /** 
    * Agregamos una transición al cambio de color de los botones.
-   * Nos permiten hacer el cambio de valor de una propiedad y que el cambio no sea de golpe, sino que se haga paulatinamente y no se vea de golpe. 
+   * Nos permiten hacer el cambio de valor de una propiedad y que el cambio no sea de golpe, sino 
+   * que se haga paulatinamente y no se vea de golpe. 
    * 
    * transition: atributoAlQueSeAplicaTransicion tiempoDuracionTransicion movimientoTipoTransicion;
    * 
@@ -334,6 +335,7 @@
 
 .navbar {
   align-items: center;
+  /* Para que el contenido no se llegue a salir. */
   flex-wrap: wrap;
   /* Flexbox. */
   display: flex;
@@ -360,15 +362,29 @@
  */
 .navbar-toggle {
   padding: 0.5em;
+  /* Que el alto se ajuste al contenido. */
   height: fit-content;
 }
 
+/** 
+ * Al momento que los elementos se desplieguen en un dispositivo móvil, que el 
+ * display sea none para que no se vea.
+ */
 .navbar-collapse {
+  display: none;
+  /* 
+   * Es el ancho default de cada elemento. En este caso, queremos que ocupe toda
+   * la pantalla. 
+   */
   flex-basis: 100%;
 }
 
 /* Lista de elementos del menú. */
 .navbar-nav {
+  /* 
+   * Que en dispositivos móviles se desplieguen los elementos en bloque para que
+   * se vean por renglones. 
+   */
   display: block;
   margin: 0;
   padding: 0;
@@ -398,12 +414,10 @@
 /* ------------------------------ DROPDOWN MENU ----------------------------- */
 
 .dropdown-menu {
-  position: absolute;
-  /**
-   * Que el menú vaya por abajo del navbar, ya que se desplegará a partir de 
-   * uno de los elementos de dicho menú.
-   * */
-  z-index: 1000;
+  /* 
+   * NO requiere z-index porque no se crea un "stacking context", ya que aquí no
+   * tenemos un `position: absolute;` 
+   */
   background-color: white;
   border: 1px solid var(--border-color);
   list-style: none;
@@ -429,11 +443,29 @@
   display: block;
 }
 
+/** Media Queries para pantallas más grandes. En las demás clases se encuentra 
+  * como base el diseño de dispositivos móviles. 
+  */
 @media (min-width: 768px) {
   .navbar-toggle {
+    /* No mostrar el botón del menú para dispositivos móviles. */
     display: none;
   }
   .navbar-nav {
+    /** 
+     * Que en pantallas más grandes, se desplieguen los elementos normales, no 
+     * uno por línea. 
+     */
     display: flex;
+  }
+  /* Que pantallas más grandes, el menú sí se muestre. */
+  .navbar-collapse {
+    display: block;
+    /* Que el tamaño se ajuste a lo restante de la pantalla. */
+    flex-basis: auto;
+  }
+  .dropdown-menu {
+    position: absolute;
+    z-index: 1000;
   }
 }

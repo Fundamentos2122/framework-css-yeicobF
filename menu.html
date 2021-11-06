@@ -19,7 +19,14 @@
     <!-- 
       Para la función de despliegue u ocultado del menú. 
       Esto es para el diseño responsivo, que cuando se cambie de tamaño se ocupe o no.
+
+      Solo se va a mostrar cuando estemos en un dispositivo móvil, y cuando 
+      estemos en uno más grande, lo vamos a ocultar.
     -->
+    <!-- button.navbar-toggle[type="button"] -->
+    <button class="navbar-toggle" type="button">
+      X
+    </button>
 
     <div class="navbar-collapse">
       <!-- Contenedor de elementos del menú. -->
@@ -43,10 +50,14 @@
               propiedad "display: block;".
             -->
             <li>
-              <a href="" class="dropdown-item">Categoría 1</a>
+              <a href="" class="dropdown-item">
+                Categoría 1
+              </a>
             </li>
             <li>
-              <a href="" class="dropdown-item">Categoría 2</a>
+              <a href="" class="dropdown-item">
+                Categoría 2
+              </a>
             </li>
           </ul>
         </li>
