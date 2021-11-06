@@ -397,7 +397,7 @@
 
 /* ------------------------------ DROPDOWN MENU ----------------------------- */
 
-.  {
+.dropdown-menu {
   position: absolute;
   /**
    * Que el menú vaya por abajo del navbar, ya que se desplegará a partir de 

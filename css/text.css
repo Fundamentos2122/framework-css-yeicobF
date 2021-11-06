@@ -1,9 +1,4 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
@@ -14,18 +9,8 @@ h6 {
 */
 
 /* Estilos que se aplican por defecto a todos estos elementos. */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   /**
    *  Tamaño máximo del ancho, por lo que la línea se va a partir si se supera
    * el tamaño.
