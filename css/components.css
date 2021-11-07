@@ -455,12 +455,15 @@
     /** 
      * Que en pantallas más grandes, se desplieguen los elementos normales, no 
      * uno por línea. 
+     *
+     * Si quiero meter más elementos en la barra, no se ponga uno en cada línea.
      */
-    display: flex;
+    display: inline-flex;
   }
   /* Que pantallas más grandes, el menú sí se muestre. */
   .navbar-collapse {
-    display: block;
+    /* Para que quepan más contenedores sin pasar de línea. */
+    display: flex;
     /* Que el tamaño se ajuste a lo restante de la pantalla. */
     flex-basis: auto;
   }
