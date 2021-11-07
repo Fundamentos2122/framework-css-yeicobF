@@ -466,6 +466,8 @@
     display: flex;
     /* Que el tamaño se ajuste a lo restante de la pantalla. */
     flex-basis: auto;
+    align-items: center;
+    justify-content: space-between;
   }
   .dropdown-menu {
     position: absolute;
