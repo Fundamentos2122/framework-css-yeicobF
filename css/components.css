@@ -294,8 +294,11 @@
    *  Tratar de centrar el elemento. 
    * - Ponemos margen superior e inferior, y el horizontal automático para que
    * se centre en pantalla.
+   *
+   * - Que siempre haya margen y el contenido del modal se centre en la 
+   * pantalla.
    * */
-  margin: 1em auto;
+  margin: auto;
   position: relative;
   background-color: white;
   border-radius: 0.25em;
