@@ -256,7 +256,14 @@
    * - Si queremos que esté encima de los demás, hay que ponerle un valor más alto.
    * */
   z-index: 1050;
-  overflow: hidden;
+  /* 
+  Quiero que se muestre una scrollbar cuando nos encontremos en dispositivo 
+  móvil y no tenga la altura necesaria para ver todo el modal verticalmente.
+  Si no le dejamos que haya scroll, el modal no se verá completo en esas 
+  pantallas, ya que no será posible hacer scroll hacia arriba o abajo.
+  */
+  overflow: auto;
+  padding: 2em;
 
   /* MS Edge */
   -ms-overflow-style: none;
