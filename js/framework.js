@@ -248,6 +248,73 @@ function toggleDropdown(e) {
 }
 
 /**
+ * Cerrar un modal
+ * @param {PointerEvent} e Evento.
+ */
+function closeModal(e) {
+  /**
+   * `e.target` nos trae el elemento que generó el evento.
+   *
+   * Como dentro tiene un id (attr_target), podemos hacer el toggle al modal
+   * completo.
+   * @type {string}
+   */
+  let modal_selector = e.target.getAttribute(attr_dismiss);
+
+  /**
+   * Obtener solo un elemento, no toda la colección. Por esta razón utilizamos
+   * el `id`, para tener certeza de que solo obtendremos un elemento.
+   */
+  let modal = document.querySelector(modal_selector);
+
+  /**
+   * Agregar la clase para mostrar el modal.
+   *
+   * `modal.classList` trae la lista de clases separadas por espacio. Con el
+   * método `.remove()` quitamos una clase. En este caso, quitamos la clase de
+   * mostrar el elemento.
+   */
+  modal.classList.remove(class_show);
+}
+
+/**
+ * Abrir y cerrar un dropdown.
+ * @param {PointerEvent} e Evento.
+ */
+function toggleDropdown(e) {
+  /**
+   * Evitar que se recargue la página, dado que se aplica a un link.
+   */
+  e.preventDefault();
+
+  /**
+   * Obtener submenú.
+   *
+   * Hay que acceder al elemento padre, el cual, es la lista del dropdown. Ya
+   * en ese nivel, podemos buscar lo que está en el submenú.
+   */
+  let submenu = e.target.parentNode.querySelector(`
+    .${dropdown_menu_class}
+  `);
+
+  /**
+   * Si ya tiene una clase, la quita.
+   * Si no tiene la clase, la agrega.
+   *
+   * Esto sería igual a lo siguiente:
+   *
+   * `
+   *   if (submenu.classList.contains(class_show)) {
+   *   submenu.classList.remove(class_show);
+   *   } else {
+   *     submenu.classList.add(class_show);
+   *   }
+   * `
+   */
+  submenu.classList.toggle(class_show);
+}
+
+/**
  * Abrir y cerrar el menú con toggle.
  * @param {PointerEvent} e Evento.
  */
@@ -257,7 +324,15 @@ function toggleMenu(e) {
    */
   e.preventDefault();
 
-  let menu = e.target.parentNode.querySelector(`
+  /**
+   * Acceder al botón padre, ya que, si pongo un SVG, se generan 2 elementos,
+   * por lo que, si doy click al elemento más interno, obtiene la etiqueta SVG
+   * y no el botón, que es lo que requiero para activar el toggle del menú.
+   */
+  parentButton = e.target.closest("button");
+
+  // Ahora sí, accedemos al menú respecto al botón padre.
+  let menu = parentButton.parentNode.querySelector(`
     .${menu_collapse_class}
   `);
 

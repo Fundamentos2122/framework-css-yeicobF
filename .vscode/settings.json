@@ -14,5 +14,27 @@
    * workspace aunque este esté dentro, no mostrará las variables.
    */
   "cssvar.files": ["css/config.css"],
-  "cssvar.extensions": ["css"]
+  "cssvar.extensions": [
+    "css"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#71751c",
+    "activityBar.activeBorder": "#31c7ce",
+    "activityBar.background": "#71751c",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#31c7ce",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#71751c",
+    "statusBar.background": "#494c12",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#71751c",
+    "statusBarItem.remoteBackground": "#494c12",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#494c12",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#494c1299",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#494c12"
 }
