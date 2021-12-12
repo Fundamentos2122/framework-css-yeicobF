@@ -138,9 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* --------------------------------- NAVBAR --------------------------------- */
 
   /** Collapse del menú. */
-  let collapse_menu_buttons = document.querySelectorAll(
-    `.${navbar_toggle}`,
-  );
+  let collapse_menu_buttons = document.querySelectorAll(`.${navbar_toggle}`);
 
   /**
    * El comportamiento con "toggle" es que si le das click, se abre, y si lo
@@ -287,13 +285,18 @@ function toggleDropdown(e) {
    */
   e.preventDefault();
 
+  // Link padre para que, independientemente de la profundidad del elemento al
+  // que se dio click, obtenga siempre el elemento `a` y pueda hacer el toggle
+  // de la de elementos del dropdown.
+  const parentAnchor = e.target.closest(`a.nav-link.${dropdown_toggle}`);
+
   /**
    * Obtener submenú.
    *
    * Hay que acceder al elemento padre, el cual, es la lista del dropdown. Ya
    * en ese nivel, podemos buscar lo que está en el submenú.
    */
-  let submenu = e.target.parentNode.querySelector(`
+  let submenu = parentAnchor.parentNode.querySelector(`
     .${dropdown_menu_class}
   `);
 
@@ -329,7 +332,7 @@ function toggleMenu(e) {
    * por lo que, si doy click al elemento más interno, obtiene la etiqueta SVG
    * y no el botón, que es lo que requiero para activar el toggle del menú.
    */
-  parentButton = e.target.closest("button");
+  const parentButton = e.target.closest("button");
 
   // Ahora sí, accedemos al menú respecto al botón padre.
   let menu = parentButton.parentNode.querySelector(`
